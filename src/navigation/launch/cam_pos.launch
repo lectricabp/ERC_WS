@@ -1,0 +1,9 @@
+<launch>
+
+<node name = "cam_pos_left" pkg="navigation" type ="subs_left.py" output="screen" respawn="true"/>
+<node name = "cam_pos_right" pkg="navigation" type ="subs_right.py" output="screen" respawn="true"/>
+<!--<node name = "cam_pos_piCam_left" pkg="navigation" type ="subs_piCam_left.py" output="screen" respawn="true"/>
+<node name = "cam_pos_piCam_right" pkg="navigation" type ="subs_piCam_right.py" output="screen" respawn="true"/>
+-->
+</launch>
+

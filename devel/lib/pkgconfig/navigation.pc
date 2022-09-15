@@ -1,0 +1,8 @@
+prefix=/home/upcspjetson/Desktop/ERC_WS/devel
+
+Name: navigation
+Description: Description of navigation
+Version: 0.0.0
+Cflags: -I/home/upcspjetson/Desktop/ERC_WS/devel/include
+Libs: -L${prefix}/lib 
+Requires: cv_bridge opencv2 rospy sensor_msgs std_msgs message_runtime

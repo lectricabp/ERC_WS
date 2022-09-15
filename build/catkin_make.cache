@@ -1,0 +1,2 @@
+navigation:position:vision
+-DCATKIN_DEVEL_PREFIX=/home/upcspjetson/Desktop/ERC_WS/devel -DCMAKE_INSTALL_PREFIX=/home/upcspjetson/Desktop/ERC_WS/install -G Unix Makefiles
