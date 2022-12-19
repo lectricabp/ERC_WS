@@ -1,2 +1,0 @@
-ERC22_URDF_description:brass_package:navigation:position:ruedas_package:vision
--DCATKIN_DEVEL_PREFIX=/home/lectric/Desktop/TEST_GIT/devel -DCMAKE_INSTALL_PREFIX=/home/lectric/Desktop/TEST_GIT/install -G Unix Makefiles

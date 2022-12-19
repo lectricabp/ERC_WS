@@ -1,8 +1,0 @@
-prefix=/home/lectric/Desktop/TEST_GIT/devel
-
-Name: position
-Description: Description of position
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 
