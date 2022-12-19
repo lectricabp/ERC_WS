@@ -2,7 +2,6 @@
 
 from cmath import pi
 from re import M
-from tkinter.tix import X_REGION
 import rospy
 import numpy as np
 from navigation.msg import Position
@@ -39,7 +38,7 @@ def cam_pos():
 
 def listener():
     rospy.init_node('pos_comp', anonymous = False)
-    
+
     rospy.Subscriber("angle", Float32, callback_angle)
 
     rospy.Subscriber("/left/pos_webCam",Position, callback_up_left)
@@ -62,7 +61,7 @@ def callback_up_left(data):
     y_rel = data.x* math.sin(angle) + data.z * math.cos(angle) + y_cam
     x_aux = x_land + x_rel
     y_aux = y_land + y_rel
-    x_g = x_aux * math.cos(angle_b) - y_aux * math.sin(angle_b) 
+    x_g = x_aux * math.cos(angle_b) - y_aux * math.sin(angle_b)
     y_g = x_aux * math.sin (angle_b) + y_aux * math.cos (angle_b)
     pos = Position()
     pos.id = 2
@@ -81,7 +80,7 @@ def callback_up_right(data):
     y_rel = -data.x* math.sin(angle) + data.z * math.cos(angle) + y_cam
     x_aux = x_land - x_rel
     y_aux = y_land -y_rel
-    x_g = x_aux * math.cos(angle_b) - y_aux * math.sin(angle_b) 
+    x_g = x_aux * math.cos(angle_b) - y_aux * math.sin(angle_b)
     y_g = x_aux * math.sin (angle_b) + y_aux * math.cos (angle_b)
     pos = Position()
     pos.id = 1
@@ -91,7 +90,7 @@ def callback_up_right(data):
     pub = rospy.Publisher('pos',Position, queue_size=100)
     pub.publish(pos)
 
-    
+
 def callback_down_left(data):
     x_land, y_land = find_coords(data.id)
     x_cam, y_cam = find_cam(4)
@@ -123,7 +122,7 @@ def callback_down_right(data):
     pub = rospy.Publisher('pos',Position, queue_size=100)
     pub.publish(pos)
 
-    
+
 
 def find_coords(id):
     landmarks = land_pos()

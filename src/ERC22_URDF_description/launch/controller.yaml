@@ -1,0 +1,55 @@
+ERC22_URDF:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+  # Position Controllers --------------------------------------
+  S_LF_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: S_LF
+    pid: {p: 5.0, i: 0.1, d: 0.2}
+  S_LB_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: S_LB
+    pid: {p: 5.0, i: 0.1, d: 0.2}
+  W_LB_velocity_controller:
+    type: effort_controllers/JointVelocityController
+    joint: W_LB
+    pid: {p: 1.0, i: 0.0, d: 0.0}
+  W_LM_velocity_controller:
+    type: effort_controllers/JointVelocityController
+    joint: W_LM
+    pid: {p: 1.0, i: 0.0, d: 0.0}
+  W_LF_velocity_controller:
+    type: effort_controllers/JointVelocityController
+    joint: W_LF
+    pid: {p: 1.0, i: 0.0, d: 0.0}
+  S_RF_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: S_RF
+    pid: {p: 5.0, i: 0.1, d: 0.2}
+  S_RB_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: S_RB
+    pid: {p: 5.0, i: 0.1, d: 0.2}
+  W_RF_velocity_controller:
+    type: effort_controllers/JointVelocityController
+    joint: W_RF
+    pid: {p: 1.0, i: 0.0, d: 0.0}
+  W_RM_velocity_controller:
+    type: effort_controllers/JointVelocityController
+    joint: W_RM
+    pid: {p: 1.0, i: 0.0, d: 0.0}
+  W_RB_velocity_controller:
+    type: effort_controllers/JointVelocityController
+    joint: W_RB
+    pid: {p: 1.0, i: 0.0, d: 0.0}
+  L_DS_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: L_DS
+    pid: {p: 5.0, i: 0.1, d: 0.2}
+  R_DS_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: R_DS
+    pid: {p: 5.0, i: 0.1, d: 0.2}
