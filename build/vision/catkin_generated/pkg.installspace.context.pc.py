@@ -4,5 +4,5 @@ PROJECT_PKG_CONFIG_INCLUDE_DIRS = "".split(';') if "" != "" else []
 PROJECT_CATKIN_DEPENDS = "".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "".split(';') if "" != "" else []
 PROJECT_NAME = "vision"
-PROJECT_SPACE_DIR = "/home/upcspjetson/Desktop/ERC_WS/install"
+PROJECT_SPACE_DIR = "/home/lectric/Desktop/TEST_GIT/install"
 PROJECT_VERSION = "0.0.0"

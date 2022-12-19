@@ -1,8 +1,8 @@
-# Install script for directory: /home/upcspjetson/Desktop/ERC_WS/src/vision
+# Install script for directory: /home/lectric/Desktop/TEST_GIT/src/vision
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/upcspjetson/Desktop/ERC_WS/install")
+  set(CMAKE_INSTALL_PREFIX "/home/lectric/Desktop/TEST_GIT/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,17 +38,17 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/upcspjetson/Desktop/ERC_WS/build/vision/catkin_generated/installspace/vision.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/lectric/Desktop/TEST_GIT/build/vision/catkin_generated/installspace/vision.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/vision/cmake" TYPE FILE FILES
-    "/home/upcspjetson/Desktop/ERC_WS/build/vision/catkin_generated/installspace/visionConfig.cmake"
-    "/home/upcspjetson/Desktop/ERC_WS/build/vision/catkin_generated/installspace/visionConfig-version.cmake"
+    "/home/lectric/Desktop/TEST_GIT/build/vision/catkin_generated/installspace/visionConfig.cmake"
+    "/home/lectric/Desktop/TEST_GIT/build/vision/catkin_generated/installspace/visionConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/vision" TYPE FILE FILES "/home/upcspjetson/Desktop/ERC_WS/src/vision/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/vision" TYPE FILE FILES "/home/lectric/Desktop/TEST_GIT/src/vision/package.xml")
 endif()
 

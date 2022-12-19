@@ -2,7 +2,7 @@
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/upcspjetson/Desktop/ERC_WS/install")
+  set(CMAKE_INSTALL_PREFIX "/home/lectric/Desktop/TEST_GIT/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/upcspjetson/Desktop/ERC_WS/build/gtest/googlemock/cmake_install.cmake")
+  include("/home/lectric/Desktop/TEST_GIT/build/gtest/googlemock/cmake_install.cmake")
 
 endif()
 

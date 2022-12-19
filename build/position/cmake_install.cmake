@@ -1,8 +1,8 @@
-# Install script for directory: /home/upcspjetson/Desktop/ERC_WS/src/position
+# Install script for directory: /home/lectric/Desktop/TEST_GIT/src/position
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/upcspjetson/Desktop/ERC_WS/install")
+  set(CMAKE_INSTALL_PREFIX "/home/lectric/Desktop/TEST_GIT/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,17 +38,17 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/upcspjetson/Desktop/ERC_WS/build/position/catkin_generated/installspace/position.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/lectric/Desktop/TEST_GIT/build/position/catkin_generated/installspace/position.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/position/cmake" TYPE FILE FILES
-    "/home/upcspjetson/Desktop/ERC_WS/build/position/catkin_generated/installspace/positionConfig.cmake"
-    "/home/upcspjetson/Desktop/ERC_WS/build/position/catkin_generated/installspace/positionConfig-version.cmake"
+    "/home/lectric/Desktop/TEST_GIT/build/position/catkin_generated/installspace/positionConfig.cmake"
+    "/home/lectric/Desktop/TEST_GIT/build/position/catkin_generated/installspace/positionConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/position" TYPE FILE FILES "/home/upcspjetson/Desktop/ERC_WS/src/position/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/position" TYPE FILE FILES "/home/lectric/Desktop/TEST_GIT/src/position/package.xml")
 endif()
 

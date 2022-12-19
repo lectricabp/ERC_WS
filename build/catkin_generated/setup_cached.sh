@@ -7,10 +7,7 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/upcspjetson/Desktop/ERC_WS/devel:$CMAKE_PREFIX_PATH"
-export LD_LIBRARY_PATH="/home/upcspjetson/Desktop/ERC_WS/devel/lib:$LD_LIBRARY_PATH"
-export PKG_CONFIG_PATH="/home/upcspjetson/Desktop/ERC_WS/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
-export PWD='/home/upcspjetson/Desktop/ERC_WS/build'
-export PYTHONPATH="/home/upcspjetson/Desktop/ERC_WS/devel/lib/python3/dist-packages:$PYTHONPATH"
-export ROSLISP_PACKAGE_DIRECTORIES='/home/upcspjetson/Desktop/ERC_WS/devel/share/common-lisp'
-export ROS_PACKAGE_PATH="/home/upcspjetson/Desktop/ERC_WS/src:$ROS_PACKAGE_PATH"
+export CMAKE_PREFIX_PATH="/home/lectric/Desktop/TEST_GIT/devel:$CMAKE_PREFIX_PATH"
+export PWD='/home/lectric/Desktop/TEST_GIT/build'
+export ROSLISP_PACKAGE_DIRECTORIES='/home/lectric/Desktop/TEST_GIT/devel/share/common-lisp'
+export ROS_PACKAGE_PATH="/home/lectric/Desktop/TEST_GIT/src:$ROS_PACKAGE_PATH"

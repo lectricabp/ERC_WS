@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
+  "/home/lectric/Desktop/TEST_GIT/devel/share/common-lisp/ros/navigation/msg/Position.lisp"
   "CMakeFiles/navigation_generate_messages_lisp"
-  "/home/upcspjetson/Desktop/ERC_WS/devel/share/common-lisp/ros/navigation/msg/Position.lisp"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -67,14 +67,14 @@ set(position_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(position_SOURCE_PREFIX /home/upcspjetson/Desktop/ERC_WS/src/position)
-  set(position_DEVEL_PREFIX /home/upcspjetson/Desktop/ERC_WS/devel)
+  set(position_SOURCE_PREFIX /home/lectric/Desktop/TEST_GIT/src/position)
+  set(position_DEVEL_PREFIX /home/lectric/Desktop/TEST_GIT/devel)
   set(position_INSTALL_PREFIX "")
   set(position_PREFIX ${position_DEVEL_PREFIX})
 else()
   set(position_SOURCE_PREFIX "")
   set(position_DEVEL_PREFIX "")
-  set(position_INSTALL_PREFIX /home/upcspjetson/Desktop/ERC_WS/install)
+  set(position_INSTALL_PREFIX /home/lectric/Desktop/TEST_GIT/install)
   set(position_PREFIX ${position_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/upcspjetson/Desktop/ERC_WS/install/lib;/opt/ros/noetic/lib)
+    foreach(path /home/lectric/Desktop/TEST_GIT/install/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

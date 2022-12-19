@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
+  "/home/lectric/Desktop/TEST_GIT/devel/include/navigation/Position.h"
   "CMakeFiles/navigation_generate_messages_cpp"
-  "/home/upcspjetson/Desktop/ERC_WS/devel/include/navigation/Position.h"
 )
 
 # Per-language clean rules from dependency scanning.

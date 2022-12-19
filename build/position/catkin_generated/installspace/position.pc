@@ -1,4 +1,4 @@
-prefix=/home/upcspjetson/Desktop/ERC_WS/install
+prefix=/home/lectric/Desktop/TEST_GIT/install
 
 Name: position
 Description: Description of position

@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
+  "/home/lectric/Desktop/TEST_GIT/devel/share/gennodejs/ros/navigation/msg/Position.js"
   "CMakeFiles/navigation_generate_messages_nodejs"
-  "/home/upcspjetson/Desktop/ERC_WS/devel/share/gennodejs/ros/navigation/msg/Position.js"
 )
 
 # Per-language clean rules from dependency scanning.

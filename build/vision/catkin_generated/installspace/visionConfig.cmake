@@ -67,14 +67,14 @@ set(vision_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(vision_SOURCE_PREFIX /home/upcspjetson/Desktop/ERC_WS/src/vision)
-  set(vision_DEVEL_PREFIX /home/upcspjetson/Desktop/ERC_WS/devel)
+  set(vision_SOURCE_PREFIX /home/lectric/Desktop/TEST_GIT/src/vision)
+  set(vision_DEVEL_PREFIX /home/lectric/Desktop/TEST_GIT/devel)
   set(vision_INSTALL_PREFIX "")
   set(vision_PREFIX ${vision_DEVEL_PREFIX})
 else()
   set(vision_SOURCE_PREFIX "")
   set(vision_DEVEL_PREFIX "")
-  set(vision_INSTALL_PREFIX /home/upcspjetson/Desktop/ERC_WS/install)
+  set(vision_INSTALL_PREFIX /home/lectric/Desktop/TEST_GIT/install)
   set(vision_PREFIX ${vision_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/upcspjetson/Desktop/ERC_WS/install/lib;/opt/ros/noetic/lib)
+    foreach(path /home/lectric/Desktop/TEST_GIT/install/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

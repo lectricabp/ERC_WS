@@ -1,2 +1,2 @@
-navigation:position:vision
--DCATKIN_DEVEL_PREFIX=/home/upcspjetson/Desktop/ERC_WS/devel -DCMAKE_INSTALL_PREFIX=/home/upcspjetson/Desktop/ERC_WS/install -G Unix Makefiles
+ERC22_URDF_description:brass_package:navigation:position:ruedas_package:vision
+-DCATKIN_DEVEL_PREFIX=/home/lectric/Desktop/TEST_GIT/devel -DCMAKE_INSTALL_PREFIX=/home/lectric/Desktop/TEST_GIT/install -G Unix Makefiles
