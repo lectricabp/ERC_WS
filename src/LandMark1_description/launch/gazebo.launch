@@ -1,0 +1,15 @@
+<launch>
+  
+  <arg name= "x" default="2.0" />
+  <arg name= "y" default="2.0" />
+  <arg name= "z" default="0.0" />
+
+  <arg name= "robot_name" default="LandMark1" />
+
+  <param name="robot_description" command="$(find xacro)/xacro $(find LandMark1_description)/urdf/LandMark1.xacro"/>
+  
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn= "false" output= "screen"
+  args="-urdf -x $(arg x) -y $(arg y) -z $(arg z) -model $(arg robot_name) -param robot_description"/>
+
+</launch>
+

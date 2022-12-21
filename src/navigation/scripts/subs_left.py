@@ -34,7 +34,7 @@ def euler_from_quaternion(x, y, z, w):
 
 def listener():
     rospy.init_node('cam_pos_left', anonymous = False)
-    rospy.Subscriber("/camera/left/image_raw",Image, callback)
+    rospy.Subscriber("ERC22_URDF/left_camera/image_raw",Image, callback)
     
 
     rospy.spin()
@@ -47,15 +47,15 @@ def callback(data):
     
 def pose_estimation(frame):
 
+    #pub = rospy.Publisher('/left/pos_webCam',Position, queue_size=100)
     pub = rospy.Publisher('/left/pos_webCam',Position, queue_size=100)
-
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     cv2.aruco_dict = AR_landmark()
     parameters = cv2.aruco.DetectorParameters_create()
     parameters.markerBorderBits = 2
     parameters.errorCorrectionRate = 0.2
-    matrix_coefficients = np.load("/home/upcspjetson/Desktop/ERC_WS/src/navigation/scripts/calibration_matrix.npy")
-    distortion_coefficients = np.load("/home/upcspjetson/Desktop/ERC_WS/src/navigation/scripts/distortion_coefficients.npy")
+    matrix_coefficients = np.load("/home/lectric/Desktop/ERC22_WS/src/navigation/scripts/calibration_matrix.npy")
+    distortion_coefficients = np.load("/home/lectric/Desktop/ERC22_WS/src/navigation/scripts/distortion_coefficients.npy")
 
     corners, ids, rejected_img_points = cv2.aruco.detectMarkers(gray, cv2.aruco_dict,parameters=parameters)
   
