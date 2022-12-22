@@ -116,8 +116,9 @@
   <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn= "false" output= "screen"
   args="-urdf -x $(arg x_13) -y $(arg y_13) -z $(arg z) -model $(arg robot_name_13) -param robot_description_13"/>
 
-  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn= "false" output= "screen"
+  <!--<node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn= "false" output= "screen"
   args="-urdf -x $(arg x_14) -y $(arg y_14) -z $(arg z) -model $(arg robot_name_14) -param robot_description_14"/>
+  -->
 
   <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn= "false" output= "screen"
   args="-urdf -x $(arg x_15) -y $(arg y_15) -z $(arg z) -model $(arg robot_name_15) -param robot_description_15"/>
