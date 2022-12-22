@@ -8,57 +8,119 @@
   <param name="robot_description_1" command="$(find xacro)/xacro $(find LandMark_description)/urdf/LandMark1.xacro"/>
 
   <arg name= "x_2" default="10.0" />
-  <arg name= "y_2" default="0.0" />
+  <arg name= "y_2" default="10.0" />
   <arg name= "robot_name_2" default="LandMark2" />
   <param name="robot_description_2" command="$(find xacro)/xacro $(find LandMark_description)/urdf/LandMark2.xacro"/>
 
-  <arg name= "x_3" default="10.0" />
-  <arg name= "y_3" default="0.0" />
+  <arg name= "x_3" default="28.35" />
+  <arg name= "y_3" default="0.04" />
   <arg name= "robot_name_3" default="LandMark3" />
   <param name="robot_description_3" command="$(find xacro)/xacro $(find LandMark_description)/urdf/LandMark3.xacro"/>
 
-  <arg name= "x_4" default="10.0" />
-  <arg name= "y_4" default="0.0" />
+  <arg name= "x_4" default="21.83" />
+  <arg name= "y_4" default="2.8" />
   <arg name= "robot_name_4" default="LandMark4" />
   <param name="robot_description_4" command="$(find xacro)/xacro $(find LandMark_description)/urdf/LandMark4.xacro"/>
 
-  <arg name= "x_5" default="10.0" />
-  <arg name= "y_5" default="0.0" />
+  <arg name= "x_5" default="18.71" />
+  <arg name= "y_5" default="17.19" />
   <arg name= "robot_name_5" default="LandMark5" />
   <param name="robot_description_5" command="$(find xacro)/xacro $(find LandMark_description)/urdf/LandMark5.xacro"/>
 
-  <arg name= "x_6" default="10.0" />
-  <arg name= "y_6" default="0.0" />
+  <arg name= "x_6" default="26.95" />
+  <arg name= "y_6" default="7.44" />
   <arg name= "robot_name_6" default="LandMark6" />
   <param name="robot_description_6" command="$(find xacro)/xacro $(find LandMark_description)/urdf/LandMark6.xacro"/>
 
-  <arg name= "x_7" default="10.0" />
-  <arg name= "y_7" default="0.0" />
+  <arg name= "x_7" default="15.97" />
+  <arg name= "y_7" default="-7.57" />
   <arg name= "robot_name_7" default="LandMark7" />
   <param name="robot_description_7" command="$(find xacro)/xacro $(find LandMark_description)/urdf/LandMark7.xacro"/>
 
-  <arg name= "x_8" default="10.0" />
-  <arg name= "y_8" default="0.0" />
+  <arg name= "x_8" default="17.87" />
+  <arg name= "y_8" default="7.57" />
   <arg name= "robot_name_8" default="LandMark8" />
   <param name="robot_description_8" command="$(find xacro)/xacro $(find LandMark_description)/urdf/LandMark8.xacro"/>
 
   <arg name= "x_9" default="10.0" />
-  <arg name= "y_9" default="0.0" />
+  <arg name= "y_9" default="-10.0" />
   <arg name= "robot_name_9" default="LandMark9" />
   <param name="robot_description_9" command="$(find xacro)/xacro $(find LandMark_description)/urdf/LandMark9.xacro"/>
 
-  <arg name= "x_10" default="10.0" />
-  <arg name= "y_10" default="0.0" />
+  <arg name= "x_10" default="29.26" />
+  <arg name= "y_10" default="14.52" />
   <arg name= "robot_name_10" default="LandMark10" />
   <param name="robot_description_10" command="$(find xacro)/xacro $(find LandMark_description)/urdf/LandMark10.xacro"/>
 
-  <arg name= "x_11" default="10.0" />
-  <arg name= "y_11" default="0.0" />
-  <arg name= "robot_name_10" default="LandMark11" />
+  <arg name= "x_11" default="18.41" />
+  <arg name= "y_11" default="25.83" />
+  <arg name= "robot_name_11" default="LandMark11" />
   <param name="robot_description_11" command="$(find xacro)/xacro $(find LandMark_description)/urdf/LandMark11.xacro"/>
+
+  <arg name= "x_12" default="23.34" />
+  <arg name= "y_12" default="14.11" />
+  <arg name= "robot_name_12" default="LandMark12" />
+  <param name="robot_description_12" command="$(find xacro)/xacro $(find LandMark_description)/urdf/LandMark12.xacro"/>
+
+  <arg name= "x_13" default="8.18" />
+  <arg name= "y_13" default="18.63" />
+  <arg name= "robot_name_13" default="LandMark13" />
+  <param name="robot_description_13" command="$(find xacro)/xacro $(find LandMark_description)/urdf/LandMark13.xacro"/>
+
+  <arg name= "x_14" default="0.0" />
+  <arg name= "y_14" default="0.0" />
+  <arg name= "robot_name_14" default="LandMark14" />
+  <param name="robot_description_14" command="$(find xacro)/xacro $(find LandMark_description)/urdf/LandMark14.xacro"/>
+
+  <arg name= "x_15" default="2.27" />
+  <arg name= "y_15" default="16.84" />
+  <arg name= "robot_name_15" default="LandMark15" />
+  <param name="robot_description_15" command="$(find xacro)/xacro $(find LandMark_description)/urdf/LandMark15.xacro"/>
 
   <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn= "false" output= "screen"
   args="-urdf -x $(arg x_1) -y $(arg y_1) -z $(arg z) -model $(arg robot_name_1) -param robot_description_1"/>
+
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn= "false" output= "screen"
+  args="-urdf -x $(arg x_2) -y $(arg y_2) -z $(arg z) -model $(arg robot_name_2) -param robot_description_2"/>
+
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn= "false" output= "screen"
+  args="-urdf -x $(arg x_3) -y $(arg y_3) -z $(arg z) -model $(arg robot_name_3) -param robot_description_3"/>
+
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn= "false" output= "screen"
+  args="-urdf -x $(arg x_4) -y $(arg y_4) -z $(arg z) -model $(arg robot_name_4) -param robot_description_4"/>
+
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn= "false" output= "screen"
+  args="-urdf -x $(arg x_5) -y $(arg y_5) -z $(arg z) -model $(arg robot_name_5) -param robot_description_5"/>
+
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn= "false" output= "screen"
+  args="-urdf -x $(arg x_6) -y $(arg y_6) -z $(arg z) -model $(arg robot_name_6) -param robot_description_6"/>
+
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn= "false" output= "screen"
+  args="-urdf -x $(arg x_7) -y $(arg y_7) -z $(arg z) -model $(arg robot_name_7) -param robot_description_7"/>
+
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn= "false" output= "screen"
+  args="-urdf -x $(arg x_8) -y $(arg y_8) -z $(arg z) -model $(arg robot_name_8) -param robot_description_8"/>
+
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn= "false" output= "screen"
+  args="-urdf -x $(arg x_9) -y $(arg y_9) -z $(arg z) -model $(arg robot_name_9) -param robot_description_9"/>
+
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn= "false" output= "screen"
+  args="-urdf -x $(arg x_10) -y $(arg y_10) -z $(arg z) -model $(arg robot_name_10) -param robot_description_10"/>
+
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn= "false" output= "screen"
+  args="-urdf -x $(arg x_11) -y $(arg y_11) -z $(arg z) -model $(arg robot_name_11) -param robot_description_11"/>
+
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn= "false" output= "screen"
+  args="-urdf -x $(arg x_12) -y $(arg y_12) -z $(arg z) -model $(arg robot_name_12) -param robot_description_12"/>
+
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn= "false" output= "screen"
+  args="-urdf -x $(arg x_13) -y $(arg y_13) -z $(arg z) -model $(arg robot_name_13) -param robot_description_13"/>
+
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn= "false" output= "screen"
+  args="-urdf -x $(arg x_14) -y $(arg y_14) -z $(arg z) -model $(arg robot_name_14) -param robot_description_14"/>
+
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn= "false" output= "screen"
+  args="-urdf -x $(arg x_15) -y $(arg y_15) -z $(arg z) -model $(arg robot_name_15) -param robot_description_15"/>
 
 </launch>
 
