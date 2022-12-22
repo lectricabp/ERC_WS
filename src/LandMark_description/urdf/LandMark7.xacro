@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<robot name="LandMark7" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find LandMark_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find LandMark_description)/urdf/LandMark7.trans" />
+<xacro:include filename="$(find LandMark_description)/urdf/LandMark7.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="0.0 0.0 0.5716479271081686" rpy="0 0 0"/>
+    <mass value="159.31386545617607"/>
+    <inertia ixx="2.500743" iyy="2.500743" izz="1.635677" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0.57" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://LandMark_description/meshes/LandMark7.dae"/>
+    </geometry>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://LandMark_description/meshes/LandMark7.dae"/>
+    </geometry>
+  </collision>
+</link>
+
+</robot>
