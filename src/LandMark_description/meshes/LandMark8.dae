@@ -26,7 +26,7 @@
         <technique sid="common">
           <lambert>
             <emission>
-              <color sid="emission">0 0 0 1</color>
+              LandMark<color sid="emission">255 255 255 1</color>
             </emission>
             <diffuse>
               <texture texture="landmark-8_png-sampler" texcoord="UVMap"/>
@@ -43,7 +43,7 @@
         <technique sid="common">
           <lambert>
             <emission>
-              <color sid="emission">0 0 0 1</color>
+              LandMark<color sid="emission">255 255 255 1</color>
             </emission>
             <diffuse>
               <color sid="diffuse">0.7879857 0.7760768 0.8000001 1</color>

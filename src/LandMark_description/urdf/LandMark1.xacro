@@ -24,4 +24,11 @@
   </collision>
 </link>
 
+<link name="world"/>
+
+<joint name="base_link_joint" type="fixed">
+  <parent link="world"/>
+  <child link="base_link"/>
+</joint>
+
 </robot>

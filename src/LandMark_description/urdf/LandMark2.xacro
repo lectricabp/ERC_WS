@@ -13,13 +13,13 @@
   <visual>
     <origin xyz="0 0 0.57" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://LandMark2_description/meshes/LandMark2.dae"/>
+      <mesh filename="package://LandMark_description/meshes/LandMark2.dae"/>
     </geometry>
   </visual>
   <collision>
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://LandMark2_description/meshes/LandMark2.dae"/>
+      <mesh filename="package://LandMark_description/meshes/LandMark2.dae"/>
     </geometry>
   </collision>
 </link>
