@@ -50,8 +50,6 @@ def callback_angle(data):
     angle_b = data.data #(pi / 180)
 
 
-
-
 def callback_up_left(data):
     global angle_b
     x_land, y_land = find_coords(data.id)
@@ -69,6 +67,7 @@ def callback_up_left(data):
     Y = y_land - y_g
 
     pos_pub(2, X, Y)
+
 
 def callback_up_right(data):
     global angle_b
@@ -98,7 +97,6 @@ def pos_pub(id, X, Y):
     pos.angle = angle_b
     pub = rospy.Publisher('pos',Position, queue_size=100)
     pub.publish(pos)
-
 
 def find_coords(id):
     landmarks = land_pos()
