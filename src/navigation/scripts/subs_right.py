@@ -34,7 +34,7 @@ def euler_from_quaternion(x, y, z, w):
 
 def listener():
     rospy.init_node('cam_pos_right', anonymous = False)
-    rospy.Subscriber("/camera/right/image_raw",Image, callback)
+    rospy.Subscriber("ERC22_URDF/right_camera/image_raw",Image, callback)
     
 
     rospy.spin()
@@ -48,14 +48,18 @@ def callback(data):
 def pose_estimation(frame):
 
     pub = rospy.Publisher('/right/pos_webCam',Position, queue_size=100)
+    pub2 = rospy.Publisher('/right/ARTag_det', Image, queue_size = 1)
 
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     cv2.aruco_dict = AR_landmark()
     parameters = cv2.aruco.DetectorParameters_create()
     parameters.markerBorderBits = 2
     parameters.errorCorrectionRate = 0.2
-    matrix_coefficients = np.load("/home/upcspjetson/Desktop/ERC_WS/src/navigation/scripts/calibration_matrix.npy")
-    distortion_coefficients = np.load("/home/upcspjetson/Desktop/ERC_WS/src/navigation/scripts/distortion_coefficients.npy")
+    #matrix_coefficients = np.load("/home/lectric/Desktop/ERC22_WS/src/navigation/scripts/calibration_matrix.npy")
+    
+    matrix_coefficients = np.array([[1086, 0, 319.5],[0, 1091, 239.5],[0, 0, 1]], dtype=float)
+
+    distortion_coefficients = np.load("/home/lectric/Desktop/ERC22_WS/src/navigation/scripts/distortion_coefficients.npy")
 
     corners, ids, rejected_img_points = cv2.aruco.detectMarkers(gray, cv2.aruco_dict,parameters=parameters)
   
@@ -63,12 +67,13 @@ def pose_estimation(frame):
     if len(corners) > 0:
         for i in range(0, len(ids)):
             # Estimate pose of each marker and return the values rvec and tvec---(different from those of camera coefficients)
-            rvec, tvec, markerPoints = cv2.aruco.estimatePoseSingleMarkers(corners[i], 0.09, matrix_coefficients,
+            rvec, tvec, markerPoints = cv2.aruco.estimatePoseSingleMarkers(corners[i], 0.055, matrix_coefficients,
                                                                        distortion_coefficients)
             # Draw a square around the markers
             cv2.aruco.drawDetectedMarkers(frame, corners) 
             
             pose = pose_comp(rvec[0][0], tvec[0][0], ids[i])
+    
             pos_cam = Position()
             pos_cam.x = pose.pose.position.x
             pos_cam.z = pose.pose.position.z
@@ -81,10 +86,8 @@ def pose_estimation(frame):
             # Draw Axis
             cv2.drawFrameAxes(frame, matrix_coefficients, distortion_coefficients, rvec, tvec, 0.01)  
 
-    '''
-    cv2.imshow("", frame)
-    cv2.waitKey(1)
-    '''
+    msg = bridge.cv2_to_imgmsg(frame, "bgr8")
+    pub2.publish(msg)
     return frame
 
 def pose_comp(rvec, tvec, ids):

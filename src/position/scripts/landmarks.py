@@ -43,19 +43,21 @@ def listener():
 
     rospy.Subscriber("/left/pos_webCam",Position, callback_up_left)
     rospy.Subscriber("/right/pos_webCam",Position, callback_up_right)
-    rospy.Subscriber("/left/pos_piCam",Position, callback_down_left)
-    rospy.Subscriber("/right/pos_piCam",Position, callback_down_right)
     rospy.spin()
 
 def callback_angle(data):
     global angle_b
-    angle_b = data.data *(pi / 180)
+    angle_b = data.data #(pi / 180)
+
+
+    
 
 def callback_up_left(data):
     global angle_b
     x_land, y_land = find_coords(data.id)
     x_cam, y_cam = find_cam(2)
-    angle = abs(math.atan2(x_cam, y_cam))
+    #angle = abs(math.atan2(x_cam, y_cam))
+    angle = pi/4
 
     x_rel = data.x* math.cos(angle) - data.z * math.sin(angle) + x_cam
     y_rel = data.x* math.sin(angle) + data.z * math.cos(angle) + y_cam
@@ -75,7 +77,8 @@ def callback_up_right(data):
     global angle_b
     x_land, y_land = find_coords(data.id)
     x_cam, y_cam = find_cam(1)
-    angle = math.atan2(x_cam, y_cam)
+    #angle = math.atan2(x_cam, y_cam)
+    angle = pi/4
     x_rel = data.x* math.cos(angle) + data.z * math.sin(angle) + x_cam
     y_rel = -data.x* math.sin(angle) + data.z * math.cos(angle) + y_cam
     x_aux = x_land - x_rel
@@ -89,40 +92,7 @@ def callback_up_right(data):
     pos.angle = angle_b
     pub = rospy.Publisher('pos',Position, queue_size=100)
     pub.publish(pos)
-
-
-def callback_down_left(data):
-    x_land, y_land = find_coords(data.id)
-    x_cam, y_cam = find_cam(4)
-    angle = math.atan2(x_cam, y_cam)* 180/(pi)
-    x_rel = data.x* math.cos(angle) + data.z * math.sin(angle) + x_cam
-    y_rel = -data.x* math.sin(angle) + data.z * math.cos(angle) + y_cam
-    x_g = x_land + x_rel
-    y_g = y_land + y_rel
-    pos = Position()
-    pos.id = 4
-    pos.x = x_g
-    pos.z = y_g
-    pub = rospy.Publisher('pos',Position, queue_size=100)
-    pub.publish(pos)
-
-
-def callback_down_right(data):
-    x_land, y_land = find_coords(data.id)
-    x_cam, y_cam = find_cam(3)
-    angle = math.atan2(x_cam, y_cam)* 180/(pi)
-    x_rel = data.x* math.cos(angle) + data.z * math.sin(angle) + x_cam
-    y_rel = -data.x* math.sin(angle) + data.z * math.cos(angle) + y_cam
-    x_g = x_land + x_rel
-    y_g = y_land + y_rel
-    pos = Position()
-    pos.id = 3
-    pos.x = x_g
-    pos.z = y_g
-    pub = rospy.Publisher('pos',Position, queue_size=100)
-    pub.publish(pos)
-
-
+    
 
 def find_coords(id):
     landmarks = land_pos()

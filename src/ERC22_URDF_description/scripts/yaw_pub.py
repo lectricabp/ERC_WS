@@ -3,7 +3,7 @@
 import rospy
 import tf.transformations as tft
 from sensor_msgs.msg import Imu
-from std_msgs.msg import Float64
+from std_msgs.msg import Float32
 
 def orientation_callback(msg):
     # Print the message
@@ -24,7 +24,7 @@ def main():
 
     # Create a publisher for the yaw angle
     global yaw_angle_publisher
-    yaw_angle_publisher = rospy.Publisher('yaw_angle', Float64, queue_size=10)
+    yaw_angle_publisher = rospy.Publisher('angle', Float32, queue_size=10)
 
     # Create a subscriber for the orientation topic
     orientation_subscriber = rospy.Subscriber('imu', Imu, orientation_callback)
