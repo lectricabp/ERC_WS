@@ -58,19 +58,17 @@ def callback_up_left(data):
     x_cam, y_cam = find_cam(2)
     #angle = abs(math.atan2(x_cam, y_cam))
     angle = pi/4
-    x_rel = data.x* math.cos(angle) - data.z * math.sin(angle) + x_cam
-    y_rel = data.x* math.sin(angle) + data.z * math.cos(angle) + y_cam
-    x_aux = x_land + x_rel
-    y_aux = y_land + y_rel
-    x_g = x_aux * math.cos(angle_b) - y_aux * math.sin(angle_b)
-    y_g = x_aux * math.sin (angle_b) + y_aux * math.cos (angle_b)
-    pos = Position()
-    pos.id = 2
-    pos.z = x_g
-    pos.x = y_g
-    pos.angle = angle_b
-    pub = rospy.Publisher('pos',Position, queue_size=100)
-    pub.publish(pos)
+    # Robot axes frame
+    y_r = y_cam + data.z*math.sin(angle) + data.x*math.cos(angle)
+    x_r = -x_cam - data.z*math.cos(angle) + data.x*math.sin(angle)
+    # Convert robot to global axes
+    y_g = x_r*math.cos(angle_b) - y_r*math.sin(angle_b)
+    x_g = x_r*math.sin(angle_b) + y_r*math.cos(angle_b)
+    # Find the global position
+    X = x_land - x_g
+    Y = y_land - y_g
+
+    pos_pub(2, X, Y)
 
 def callback_up_right(data):
     global angle_b
@@ -78,16 +76,25 @@ def callback_up_right(data):
     x_cam, y_cam = find_cam(1)
     #angle = math.atan2(x_cam, y_cam)
     angle = pi/4
-    x_rel = data.x* math.cos(angle) + data.z * math.sin(angle) + x_cam
-    y_rel = -data.x* math.sin(angle) + data.z * math.cos(angle) + y_cam
-    x_aux = x_land - x_rel
-    y_aux = y_land -y_rel
-    x_g = x_aux * math.cos(angle_b) - y_aux * math.sin(angle_b)
-    y_g = x_aux * math.sin (angle_b) + y_aux * math.cos (angle_b)
+    #Robot axes frame
+    y_r = y_cam + data.z*math.sin(angle) - data.x*math.cos(angle)
+    x_r = x_cam + data.z*math.cos(angle) + data.x*math.sin(angle)
+    # Convert robot to global axes
+    y_g = x_r*math.cos(angle_b) - y_r*math.sin(angle_b)
+    x_g = x_r*math.sin(angle_b) + y_r*math.cos(angle_b)
+    # Find the global position
+    X = x_land - x_g
+    Y = y_land - y_g
+
+    pos_pub(1, X, Y)
+
+
+def pos_pub(id, X, Y):
+    # Initialize the position variable
     pos = Position()
-    pos.id = 1
-    pos.z = x_g
-    pos.x = y_g
+    pos.id = id
+    pos.z = X
+    pos.x = Y
     pos.angle = angle_b
     pub = rospy.Publisher('pos',Position, queue_size=100)
     pub.publish(pos)
