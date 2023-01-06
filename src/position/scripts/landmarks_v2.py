@@ -59,14 +59,8 @@ def callback_up_left(data):
     # Robot axes frame
     y_r = y_cam + data.z*math.sin(angle) + data.x*math.cos(angle)
     x_r = -x_cam - data.z*math.cos(angle) + data.x*math.sin(angle)
-    # Convert robot to global axes
-    y_g = x_r*math.cos(angle_b) - y_r*math.sin(angle_b)
-    x_g = x_r*math.sin(angle_b) + y_r*math.cos(angle_b)
-    # Find the global position
-    X = x_land - x_g
-    Y = y_land - y_g
 
-    pos_pub(2, X, Y)
+    pos_pub(2, y_r, x_r, y_land, x_land)
 
 
 def callback_up_right(data):
@@ -78,17 +72,17 @@ def callback_up_right(data):
     #Robot axes frame
     y_r = y_cam + data.z*math.sin(angle) - data.x*math.cos(angle)
     x_r = x_cam + data.z*math.cos(angle) + data.x*math.sin(angle)
+
+    pos_pub(1, y_r, x_r, y_land, x_land)
+
+
+def pos_pub(id, y_r, x_r, y_land, x_land):
     # Convert robot to global axes
     y_g = x_r*math.cos(angle_b) - y_r*math.sin(angle_b)
     x_g = x_r*math.sin(angle_b) + y_r*math.cos(angle_b)
     # Find the global position
     X = x_land - x_g
     Y = y_land - y_g
-
-    pos_pub(1, X, Y)
-
-
-def pos_pub(id, X, Y):
     # Initialize the position variable
     pos = Position()
     pos.id = id
