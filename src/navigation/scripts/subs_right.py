@@ -41,7 +41,7 @@ def pose_estimation(frame):
     parameters.errorCorrectionRate = 0.2
     #matrix_coefficients = np.load("/home/lectric/Desktop/ERC22_WS/src/navigation/scripts/calibration_matrix.npy")
 
-    matrix_coefficients = np.array([[1086, 0, 319.5],[0, 1091, 239.5],[0, 0, 1]], dtype=float)
+    matrix_coefficients = np.array([[1086, 0, 959.5],[0, 1091, 539.5],[0, 0, 1]], dtype=float)
 
     distortion_coefficients = np.load("/home/lectric/Desktop/ERC22_WS/src/navigation/scripts/distortion_coefficients.npy")
 
@@ -51,7 +51,7 @@ def pose_estimation(frame):
     if len(corners) > 0:
         for i in range(0, len(ids)):
             # Estimate pose of each marker and return the values rvec and tvec---(different from those of camera coefficients)
-            rvec, tvec, markerPoints = cv2.aruco.estimatePoseSingleMarkers(corners[i], 0.055, matrix_coefficients,
+            rvec, tvec, markerPoints = cv2.aruco.estimatePoseSingleMarkers(corners[i], 0.15, matrix_coefficients,
                                                                        distortion_coefficients)
             # Draw a square around the markers
             cv2.aruco.drawDetectedMarkers(frame, corners)

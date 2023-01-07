@@ -105,13 +105,13 @@
     <camera name="left">
       <horizontal_fov>1.2217304</horizontal_fov>
       <image>
-        <width>640</width>
-        <height>480</height>
+        <width>1920</width>
+        <height>1080</height>
         <format>R8G8B8</format>
       </image>
       <clip>
         <near>0.02</near>
-        <far>300</far>
+        <far>500</far>
       </clip>
       <noise>
         <type>gaussian</type>
@@ -145,13 +145,13 @@
     <camera name="right">
       <horizontal_fov>1.2217304</horizontal_fov>
       <image>
-        <width>640</width>
-        <height>480</height>
+        <width>1920</width>
+        <height>1080</height>
         <format>R8G8B8</format>
       </image>
       <clip>
         <near>0.02</near>
-        <far>300</far>
+        <far>500</far>
       </clip>
       <noise>
         <type>gaussian</type>
