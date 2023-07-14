@@ -139,7 +139,7 @@
   </sensor>
 </gazebo>
 
-<gazebo reference="camera_link_right">
+<!-- <gazebo reference="camera_link_right">
   <sensor type="camera" name="right">
     <update_rate>30.0</update_rate>
     <camera name="right">
@@ -155,9 +155,9 @@
       </clip>
       <noise>
         <type>gaussian</type>
-        <!-- Noise is sampled independently per pixel on each frame.
+        Noise is sampled independently per pixel on each frame.
              That pixel's noise value is added to each of its color
-             channels, which at that point lie in the range [0,1]. -->
+             channels, which at that point lie in the range [0,1].
         <mean>0.0</mean>
         <stddev>0.007</stddev>
       </noise>
@@ -177,6 +177,6 @@
       <distortionT2>0.0</distortionT2>
     </plugin>
   </sensor>
-</gazebo>
+</gazebo> -->
 
 </robot>

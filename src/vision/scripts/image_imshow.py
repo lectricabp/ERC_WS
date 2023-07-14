@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import cv2
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(2)
 print(cap.isOpened())
 
 if not cap.isOpened():

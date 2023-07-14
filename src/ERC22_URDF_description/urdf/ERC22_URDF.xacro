@@ -299,7 +299,7 @@
     <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
   </inertial>
 </link>
-
+<!--
 <link name="camera_link_right">
   <collision>
     <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -319,7 +319,7 @@
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
   </inertial>
-</link>
+</link> -->
 
 <joint name="S_LF" type="continuous">
   <origin xyz="0.391355 -0.383158 0.356565" rpy="0 0 0"/>
@@ -407,16 +407,16 @@
 
 <joint name="camera_joint_left" type="fixed">
   <axis xyz="0 1 0" />
-  <origin xyz="0.285 0.23 0.58" rpy="0 0 0.785"/>
+  <origin xyz="0.285 0 0.58" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="camera_link_left"/>
 </joint>
 
-<joint name="camera_joint_right" type="fixed">
+<!-- <joint name="camera_joint_right" type="fixed">
   <axis xyz="0 1 0" />
   <origin xyz="0.285 -0.23 0.58" rpy="0 0 -0.785"/>
   <parent link="base_link"/>
   <child link="camera_link_right"/>
-</joint>
+</joint> -->
 
 </robot>

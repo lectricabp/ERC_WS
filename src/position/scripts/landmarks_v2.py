@@ -42,7 +42,7 @@ def listener():
     rospy.Subscriber("angle", Float32, callback_angle)
 
     rospy.Subscriber("/left/pos_webCam",Position, callback_up_left)
-    rospy.Subscriber("/right/pos_webCam",Position, callback_up_right)
+    # rospy.Subscriber("/right/pos_webCam",Position, callback_up_right)
     rospy.spin()
 
 def callback_angle(data):

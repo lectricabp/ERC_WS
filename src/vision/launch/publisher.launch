@@ -3,8 +3,8 @@
 <node name = "image_left" pkg="vision" type ="image_publisher_left.py" output="screen" respawn="true"/>
 
 
-<node name = "image_right" pkg="vision" type ="image_publisher_right.py" output="screen" respawn="true"/>
-<!--<node name = "image_piCam_left" pkg="vision" type ="image_publisher_piCam_left.py" output="screen" respawn="true"/>
+<!--<node name = "image_right" pkg="vision" type ="image_publisher_right.py" output="screen" respawn="true"/>
+<node name = "image_piCam_left" pkg="vision" type ="image_publisher_piCam_left.py" output="screen" respawn="true"/>
 <node name = "image_piCam_right" pkg="vision" type ="image_publisher_piCam_right.py" output="screen" respawn="true"/>
 -->
 </launch>
