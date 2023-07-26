@@ -18,7 +18,7 @@ bridge = CvBridge()
 
 def listener():
     rospy.init_node('cam_pos_left', anonymous = False)
-    rospy.Subscriber("ERC22_URDF/left_camera/image_raw",Image, callback)
+    rospy.Subscriber("camera/left_camera/image_raw",Image, callback)
 
 
     rospy.spin()

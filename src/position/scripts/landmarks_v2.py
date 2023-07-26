@@ -31,9 +31,7 @@ def land_pos():
 
 def cam_pos():
     cams = [[1, 0.23, 0.283], #up right
-            [2, -0.225, 0.295], #up left
-            [3, 0.25, -0.325],  #down right
-            [4, -0,25, -0.325]] #down left
+            [2, 0, 0.295]] #up left
     return cams
 
 def listener():

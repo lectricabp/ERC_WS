@@ -5,12 +5,12 @@ from sensor_msgs.msg import Image
 from cv_bridge import CvBridge, CvBridgeError
 import cv2
 
-cap = cv2.VideoCapture(3)
+cap = cv2.VideoCapture(2)
 print(cap.isOpened())
 bridge = CvBridge()
 
 def talker():
-    pub = rospy.Publisher('/camera/left/image_raw', Image, queue_size = 1)
+    pub = rospy.Publisher('/camera/left_camera/image_raw', Image, queue_size = 1)
     rospy.init_node('image_left', anonymous = False)
     rate = rospy.Rate(10)
     while not rospy.is_shutdown():
